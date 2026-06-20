@@ -14,7 +14,7 @@ Instead of relying on hardcoded alphabet arrays or mapping tables, this program 
 * **Character Extraction:** Iterates through the input string using `toCharArray()`.
 * **Case Handling & Bounds:** Dynamically checks if a character is uppercase (ASCII 65-90) or lowercase (ASCII 97-122) before applying logic.
 * **Modular Arithmetic:** Applies a transformation formula to ensure characters wrap around the alphabet boundary seamlessly without breaking the ASCII range: 
-  `char newChar = (char) (((int) oldChar + shift - baseASCII) % 26 + baseASCII)`
+  `char newChar = (char) (((((int) oldChar + shift) % baseASCII) % 26) + baseASCII)`
 * **Data Sanitization:** Non-alphabetic characters (spaces, numbers, punctuation) bypass the shift logic entirely to maintain the underlying structural integrity of the message.
 
 ## Verified Test Cases & Execution Examples
